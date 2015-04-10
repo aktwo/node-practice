@@ -1,0 +1,12 @@
+{
+  "name": "CodeTest",
+  "version": "0.0.1",
+  "description": "A little exercise to show I can code",
+  "author": {
+    "name": "Akshay Kumar",
+    "email": "akshay.kumar890@gmail.com"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
