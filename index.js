@@ -1,7 +1,7 @@
 var rename = require('./lib/rename');
 var append = require('./lib/append');
 var moment = require('moment');
-var fs = require('fs');
+var fs = require('fs-extra');
 var path = require('path');
 
 var appender = {};
@@ -17,7 +17,8 @@ fs.readdir(originDirectory, function(err, files) {
     file = files[i];
     var currentMoment = moment();
     var fileExtension = path.extname(file);
-    rename.copy(path.join(originDirectory, file), destinationDirectory, currentMoment, function(fileInfo) {
+    console.log("Now checking " + file);
+    rename.copy(path.resolve(originDirectory, file), destinationDirectory, currentMoment, function(fileInfo) {
       if (typeof appender[fileExtension] === "function") {
         appender[fileExtension](fileInfo["new filepath"], fileInfo);
       }
@@ -25,6 +26,5 @@ fs.readdir(originDirectory, function(err, files) {
         console.log("Filetype " + fileExtension + " not supported.");
       }
     });
-
   }
 });
