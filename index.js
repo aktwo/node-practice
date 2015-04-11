@@ -16,6 +16,7 @@ appender['.json'] = append.json;
 var originDirectory = "./files/original/";
 var destinationDirectory = "./files/moved/";
 
+// Main program loop
 fs.readdir(originDirectory, function(err, files) {
   if (err) throw err;
   for (var i = 0; i < files.length; i++) {

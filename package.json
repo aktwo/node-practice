@@ -1,7 +1,7 @@
 {
-  "name": "CodeTest",
+  "name": "NodeTest",
   "version": "0.0.1",
-  "description": "A little exercise to show I can code",
+  "description": "Fun with node",
   "author": {
     "name": "Akshay Kumar",
     "email": "akshay.kumar890@gmail.com"
