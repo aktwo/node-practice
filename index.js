@@ -17,12 +17,14 @@ fs.readdir(originDirectory, function(err, files) {
     file = files[i];
     var currentMoment = moment();
     var fileExtension = path.extname(file);
-    var fileInfo = rename.copy(path.join(originDirectory, file), destinationDirectory, currentMoment);
-    if (typeof appender[fileExtension] === "function") {
-      appender[fileExtension](fileInfo["new filepath"], fileInfo);
-    }
-    else {
-      console.log("Filetype " + fileExtension + " not supported.");
-    }
+    rename.copy(path.join(originDirectory, file), destinationDirectory, currentMoment, function(fileInfo) {
+      if (typeof appender[fileExtension] === "function") {
+        appender[fileExtension](fileInfo["new filepath"], fileInfo);
+      }
+      else {
+        console.log("Filetype " + fileExtension + " not supported.");
+      }
+    });
+
   }
 });
