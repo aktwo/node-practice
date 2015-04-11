@@ -5,6 +5,9 @@
   "author": {
     "name": "Akshay Kumar",
     "email": "akshay.kumar890@gmail.com"
+  }, 
+  "dependencies": {
+    "moment": ">=2.10.2"
   },
   "scripts": {
     "start": "node index.js"
