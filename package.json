@@ -11,6 +11,7 @@
     "fs-extra": ">=0.18.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "clean": "rm -rf files/moved/"
   }
 }
